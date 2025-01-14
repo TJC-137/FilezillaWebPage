@@ -2,7 +2,6 @@ const ftp = require("basic-ftp");
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
-const xml2js = require("xml2js");
 
 const app = express();
 app.use(cors());
@@ -17,27 +16,22 @@ const FTP_CONFIG = {
     port: 21,
 };
 
-const XML_FILE_PATH = "hotels.xml";
+const JSON_FILE_PATH = "characters.json";
 
-app.get("/hotels", async (req, res) => {
+app.get("/characters", async (req, res) => {
     const client = new ftp.Client();
     try {
         await client.access(FTP_CONFIG);
 
-        // Download the XML file from the FTP server
-        await client.downloadTo(XML_FILE_PATH, XML_FILE_PATH);
+        // Descargar el archivo JSON desde el servidor FTP
+        await client.downloadTo(JSON_FILE_PATH, JSON_FILE_PATH);
 
-        // Read and parse the XML file
-        const xmlData = fs.readFileSync(XML_FILE_PATH, "utf8");
-        xml2js.parseString(xmlData, (err, result) => {
-            if (err) {
-                console.error("Error parsing XML:", err);
-                return res.status(500).send("Failed to parse XML file.");
-            }
+        // Leer y parsear el archivo JSON
+        const jsonData = fs.readFileSync(JSON_FILE_PATH, "utf8");
+        const parsedData = JSON.parse(jsonData); // Parsear el archivo JSON
 
-            // Send parsed data to the frontend
-            res.json(result.hotels.hotel); // Assumes XML has a structure <hotels><hotel>...</hotel></hotels>
-        });
+        // Enviar los datos al frontend
+        res.json(parsedData.characters); // Asumiendo que el JSON tiene la estructura 'characters' que contiene los datos de los personajes
     } catch (err) {
         console.error("Error accessing FTP server:", err);
         res.status(500).send("Failed to fetch data from FTP server.");

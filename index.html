@@ -3,84 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotels Data</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-    </style>
+    <title>Character Carousel</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hotels Data</h1>
-    <table id="hotelsTable">
-        <thead>
-            <tr>
-                <th>Hotel Name</th>
-                <th>Location</th>
-                <th>Rating</th>
-                <th>Number of Rooms</th>
-                <th>Price per Night</th>
-                <th>Amenities</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Rows will be populated dynamically -->
-        </tbody>
-    </table>
+    <h1>Character Carousel</h1>
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <!-- Las tarjetas de los personajes se agregarán dinámicamente aquí -->
+        </div>
+        <button class="prev" id="prev">&#10094;</button>
+        <button class="next" id="next">&#10095;</button>
+    </div>
 
     <script>
-        async function fetchHotels() {
+        async function fetchCharacters() {
             try {
-                const response = await fetch("http://localhost:3000/hotels");
-                const hotels = await response.json();
+                const response = await fetch("http://localhost:3000/characters");
+                const characters = await response.json();
 
-                const tableBody = document.getElementById("hotelsTable").querySelector("tbody");
+                const carousel = document.getElementById("carousel");
 
-                hotels.forEach(hotel => {
-                    const row = document.createElement("tr");
+                characters.forEach(character => {
+                    const card = document.createElement("div");
+                    card.classList.add("carousel-card");
 
-                    row.innerHTML = `
-                        <td>${hotel.name[0]}</td>
-                        <td>${hotel.location[0]}</td>
-                        <td>${hotel.rating[0]}</td>
-                        <td>${hotel.rooms[0]}</td>
-                        <td>${hotel.price[0]}</td>
-                        <td>${hotel.amenities[0]}</td>
+                    card.innerHTML = `
+                        <img src="${character.image}" alt="${character.name}">
+                        <div class="card-info">
+                            <h2>${character.name}</h2>
+                            <p><strong>Quote:</strong> "${character.quote}"</p>
+                            <p><strong>Attribute:</strong> ${character.attribute}</p>
+                            <p><strong>Weapon:</strong> ${character.weapon}</p>
+                            <p><strong>Rarity:</strong> ${character.rarity}</p>
+                            <p><strong>Class:</strong> ${character.class}</p>
+                            <p><strong>Birthplace:</strong> ${character.birthplace}</p>
+                            <p><strong>Birthday:</strong> ${character.birthday}</p>
+                            <p><strong>Image:</strong> ${character.image}</p>
+                            </div>
                     `;
 
-                    tableBody.appendChild(row);
+                    carousel.appendChild(card);
                 });
+
+                // Set up carousel controls
+                let currentIndex = 0;
+                const cards = document.querySelectorAll(".carousel-card");
+
+                const nextButton = document.getElementById("next");
+                const prevButton = document.getElementById("prev");
+
+                function updateCarousel() {
+                    const maxIndex = cards.length - 1;
+                    if (currentIndex > maxIndex) currentIndex = 0;
+                    if (currentIndex < 0) currentIndex = maxIndex;
+
+                    const offset = -currentIndex * 100;
+                    document.getElementById("carousel").style.transform = `translateX(${offset}%)`;
+                }
+
+                nextButton.addEventListener("click", () => {
+                    currentIndex++;
+                    updateCarousel();
+                });
+
+                prevButton.addEventListener("click", () => {
+                    currentIndex--;
+                    updateCarousel();
+                });
+
+                updateCarousel();
             } catch (error) {
-                console.error("Error fetching hotel data:", error);
+                console.error("Error fetching characters data:", error);
             }
         }
 
-        // Fetch and display hotels data on page load
-        fetchHotels();
+        // Fetch and display characters on page load
+        fetchCharacters();
     </script>
 </body>
 </html>
