@@ -3,19 +3,24 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1a1a1a; /* Fondo oscuro */
-    color: #e6e6e6; /* Texto en blanco brillante */
+    background-color: #1a1a1a;
+    color: #dddada;
     line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
 }
 
 /* Título */
 h1 {
     text-align: center;
-    color: #e6e6e6;
+    color: #ebdcb4;
     font-size: 2.8em;
     margin: 30px 0;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Contenedor del carrusel */
@@ -25,49 +30,32 @@ h1 {
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    background-color: #333; /* Fondo oscuro para el carrusel */
-}
-
-/* Carrusel */
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Cada tarjeta del carrusel */
-.carousel-card {
-    min-width: 100%;
-    box-sizing: border-box;
-    background: #2d2d2d; /* Fondo oscuro de la tarjeta */
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra fuerte */
-    overflow: hidden;
-    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: #333;
     text-align: center;
-    transform: scale(1); /* Escala para animar las tarjetas */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.carousel-card:hover {
-    transform: scale(1.05); /* Efecto de zoom en la tarjeta */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+/* Card del carrusel */
+.carousel-card {
+    background: #2d2d2d;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
-/* Imagen de la tarjeta */
 .carousel-card img {
-    width: 150px; /* Ancho fijo */
-    height: 150px; /* Altura fija */
-    object-fit: cover; /* La imagen cubre el área sin distorsionarse */
-    border-radius: 50%; /* Bordes redondeados */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
     margin-top: 20px;
 }
 
-/* Información dentro de cada tarjeta */
+/* Información dentro de la tarjeta */
 .card-info {
     padding: 20px;
     color: #e6e6e6;
-    background-color: #1e1e1e; /* Fondo oscuro en la parte inferior */
+    background-color: #1e1e1e;
     border-radius: 0 0 12px 12px;
 }
 
@@ -75,7 +63,7 @@ h1 {
     font-size: 1.5em;
     margin-bottom: 15px;
     font-weight: bold;
-    color: #ffcc00; /* Color dorado para los nombres */
+    color: rgba(230, 183, 56, 0.719);
 }
 
 .card-info p {
@@ -84,7 +72,7 @@ h1 {
     color: #e6e6e6;
 }
 
-/* Botones de navegación prev y next */
+/* Botones de navegación */
 button {
     position: absolute;
     top: 50%;
@@ -102,6 +90,7 @@ button {
 
 button:hover {
     font-size: 3em;
+    color: rgb(223, 206, 114);
 }
 
 #prev {

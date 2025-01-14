@@ -35,7 +35,7 @@
       },
       {
         "name": "Carlotta",
-        "quote": "He pasado mi vida observando las olas, esperando que pase la tormenta... pero la calma siempre es seguida por otra tempestad.",
+        "quote": "The beauty of art shouldn't be confined by a viewer's knowledge or taste.",
         "attribute": "Glacio",
         "weapon": "Pistolas",
         "rarity": 5,
@@ -248,7 +248,7 @@
         "class": "Natural",
         "birthplace": "Huanglong",
         "birthday": "October 2",
-        "image": "https://api.resonance.rest/characters/youhu/icon"
+        "image": "https://api.resonance.rest/characters/yuanwu/icon"
       },
       {
         "name": "Zhezhi",

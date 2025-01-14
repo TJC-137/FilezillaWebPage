@@ -9,77 +9,23 @@
 <body>
     <h1>Character Carousel</h1>
     <div class="carousel-container">
-        <div class="carousel" id="carousel">
-            <!-- Las tarjetas de los personajes se agregarán dinámicamente aquí -->
+        <div class="carousel-card">
+            <img id="character-image" src="" alt="Character Image">
+            <div class="card-info">
+                <h2 id="character-name"></h2>
+                <p><strong>Attribute:</strong> <span id="character-attribute"></span></p>
+                <p><strong>Weapon:</strong> <span id="character-weapon"></span></p>
+                <p><strong>Rarity:</strong> <span id="character-rarity"></span></p>
+                <p><strong>Class:</strong> <span id="character-class"></span></p>
+                <p><strong>Birthplace:</strong> <span id="character-birthplace"></span></p>
+                <p><strong>Birthday:</strong> <span id="character-birthday"></span></p>
+                <p><strong>Quote:</strong> "<span id="character-quote"></span>"</p>
+            </div>
         </div>
         <button class="prev" id="prev">&#10094;</button>
         <button class="next" id="next">&#10095;</button>
     </div>
 
-    <script>
-        async function fetchCharacters() {
-            try {
-                const response = await fetch("http://localhost:3000/characters");
-                const characters = await response.json();
-
-                const carousel = document.getElementById("carousel");
-
-                characters.forEach(character => {
-                    const card = document.createElement("div");
-                    card.classList.add("carousel-card");
-
-                    card.innerHTML = `
-                        <img src="${character.image}" alt="${character.name}">
-                        <div class="card-info">
-                            <h2>${character.name}</h2>
-                            <p><strong>Quote:</strong> "${character.quote}"</p>
-                            <p><strong>Attribute:</strong> ${character.attribute}</p>
-                            <p><strong>Weapon:</strong> ${character.weapon}</p>
-                            <p><strong>Rarity:</strong> ${character.rarity}</p>
-                            <p><strong>Class:</strong> ${character.class}</p>
-                            <p><strong>Birthplace:</strong> ${character.birthplace}</p>
-                            <p><strong>Birthday:</strong> ${character.birthday}</p>
-                            <p><strong>Image:</strong> ${character.image}</p>
-                            </div>
-                    `;
-
-                    carousel.appendChild(card);
-                });
-
-                // Set up carousel controls
-                let currentIndex = 0;
-                const cards = document.querySelectorAll(".carousel-card");
-
-                const nextButton = document.getElementById("next");
-                const prevButton = document.getElementById("prev");
-
-                function updateCarousel() {
-                    const maxIndex = cards.length - 1;
-                    if (currentIndex > maxIndex) currentIndex = 0;
-                    if (currentIndex < 0) currentIndex = maxIndex;
-
-                    const offset = -currentIndex * 100;
-                    document.getElementById("carousel").style.transform = `translateX(${offset}%)`;
-                }
-
-                nextButton.addEventListener("click", () => {
-                    currentIndex++;
-                    updateCarousel();
-                });
-
-                prevButton.addEventListener("click", () => {
-                    currentIndex--;
-                    updateCarousel();
-                });
-
-                updateCarousel();
-            } catch (error) {
-                console.error("Error fetching characters data:", error);
-            }
-        }
-
-        // Fetch and display characters on page load
-        fetchCharacters();
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
