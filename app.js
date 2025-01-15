@@ -39,11 +39,28 @@ async function fetchCharacters() {
                 characterName.textContent = character.name;
                 characterAttribute.textContent = character.attribute;
                 characterWeapon.textContent = character.weapon;
-                characterRarity.textContent = character.rarity;
                 characterClass.textContent = character.class;
                 characterBirthplace.textContent = character.birthplace;
                 characterBirthday.textContent = character.birthday;
                 characterQuote.textContent = character.quote;
+
+                // Generar estrellas de rareza
+                let stars = '';
+                for (let i = 0; i < Math.floor(character.rarity); i++) {
+                    stars += '★';  // Estrella llena
+                }
+
+                if (character.rarity % 1 !== 0) {
+                    stars += '✩'; // Estrella medio llena
+                }
+
+                for (let i = Math.ceil(character.rarity); i < 5; i++) {
+                    stars += '☆';  // Estrella vacía
+                }
+
+                // Asignar las estrellas generadas al elemento de rareza
+                characterRarity.innerHTML = stars;
+
 
                 // Reactivar las transiciones de forma suave
                 setTimeout(() => {
