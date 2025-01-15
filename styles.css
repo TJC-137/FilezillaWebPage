@@ -31,6 +31,7 @@ h1 {
 .carousel-container {
     position: relative;
     width: 80%;
+    max-width: 800px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
