@@ -144,7 +144,8 @@
       },
       {
         "name": "Rover",
-        "quote": "Is this the beginning of a new journey? Brimming with novel sounds, and untold stories...",        "attribute": "Multi",
+        "quote": "Is this the beginning of a new journey? Brimming with novel sounds, and untold stories...", 
+         "attribute": "Spectro",
         "weapon": "Sword",
         "rarity": 5,
         "class": "Natural",
@@ -165,7 +166,7 @@
       },
       {
         "name": "Shorekeeper",
-        "quote": "\"The Shorekeeper\"... This name suits me well enough. It aligns with my purpose and drive: they only exist because of you",
+        "quote": "The Shorekeeper... This name suits me well enough. It aligns with my purpose and drive: they only exist because of you",
         "attribute": "Spectro",
         "weapon": "Rectifier",
         "rarity": 5,
@@ -196,7 +197,7 @@
         "image": "https://api.resonance.rest/characters/verina/icon"
       },
       {
-        "name": "Xiangli%20Yao",
+        "name": "Xiangli Yao",
         "quote": "As truthseekers, we gauge the universe from within a nutshell. I'd love to hear your insights.",
         "attribute": "Electro",
         "weapon": "Gauntlet",

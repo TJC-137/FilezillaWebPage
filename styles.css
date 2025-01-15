@@ -96,6 +96,8 @@ h1 {
     line-height: 1.4;
 }
 
+
+
 /* Botones de navegación */
 button {
     position: absolute;
@@ -141,26 +143,57 @@ button:hover {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+
+
+/* Iconos para atributos */
+#character-attribute {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+#character-attribute::after {
+    content: "";
+    position: relative;
+    left: 10 px;
+    top:-1px;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Iconos para cada tipo de atributo */
+#character-attribute.Aero::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/6/67/Aero_Icon.png/revision/latest?cb=20240702104134');}
+#character-attribute.Electro::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/c/c1/Electro_Icon.png/revision/latest?cb=20240702104214');}
+#character-attribute.Glacio::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/a/aa/Glacio_Icon.png/revision/latest?cb=20240702104101');}
+#character-attribute.Fusion::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/f/f9/Fusion_Icon.png/revision/latest?cb=20240702103638');}
+#character-attribute.Havoc::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/6/64/Havoc_Icon.png/revision/latest?cb=20240702104302');}
+#character-attribute.Spectro::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/9/9d/Attribute_Spectro_Round.png/revision/latest?cb=20240612101219');}
+
+/* Colores para cada tipo de atributo */
+#character-attribute.Aero{color: #57d1ad;}
+#character-attribute.Electro{color: #a733b1;}
+#character-attribute.Glacio{color: #38abcc;}
+#character-attribute.Fusion{color: #c92b49;}
+#character-attribute.Havoc{color: #81194c;}
+#character-attribute.Spectro{color: #ece3a5;}
+
+/* Color para estrellas de rareza */
+#character-rarity:hover {color: #dfbf69;}
+
+
 /* Estilos para dispositivos móviles */
 @media (max-width: 767px) {
-    h1 {
-        font-size: 1.8em;
-    }
 
-    .carousel-card img {
-        width: 100px;
-        height: 100px;
-    }
+    h1 {font-size: 1.8em;}
 
-    .card-info h2 {
-        font-size: 1.2em;
-    }
+    .carousel-card img {width: 100px;height: 100px;}
 
-    .card-info p {
-        font-size: 1em;
-    }
+    .card-info h2 {font-size: 1.2em;}
 
-    button {
-        font-size: 2em;
-    }
+    .card-info p {font-size: 1em;}
+
+    button {font-size: 2em;}
 }
+

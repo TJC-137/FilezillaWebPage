@@ -44,6 +44,11 @@ async function fetchCharacters() {
                 characterBirthday.textContent = character.birthday;
                 characterQuote.textContent = character.quote;
 
+                // Asignamos la clase correspondiente al atributo
+                characterAttribute.className = '';  // Resetear cualquier clase anterior
+                characterAttribute.classList.add(character.attribute); // Agregar clase de atributo (Aero, Glacio, Electro, etc.)
+
+
                 // Generar estrellas de rareza
                 let stars = '';
                 for (let i = 0; i < Math.floor(character.rarity); i++) {
