@@ -96,6 +96,63 @@ h1 {
     line-height: 1.4;
 }
 
+/* Contenedor de la barra de búsqueda */
+#search-container {
+    width: 220px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 999;  /* Asegúrate de que esté encima de otros elementos */
+}
+
+/* Estilo de la barra de búsqueda */
+#search-input {
+    background-color: rgba(51, 51, 51, 0.5);
+    width: 200px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: white;
+}
+
+/* Lista de personajes filtrados */
+#filtered-characters-list {
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 40px;  /* Ajusta esto para que la lista aparezca debajo de la barra */
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.5);
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;  /* Inicialmente la lista está oculta */
+    z-index: 999;  /* Asegura que esté por encima de otros elementos */
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Elementos de la lista de personajes */
+.character-item {
+    padding: 10px;
+    cursor: pointer;
+    color: #f0f0f0;
+    border-bottom: 1px solid #d1d1d1;
+    transition: background-color 0.3s ease;
+}
+
+.character-item:hover {
+    color: #dfbf69;
+    background-color: rgba(39, 39, 39, 0.5);
+}
+
+/* Mostrar la lista cuando hay resultados */
+#filtered-characters-list.show {
+    display: block;
+    max-height: 200px;  /* Mostrar lista con altura */
+    opacity: 1;
+}
 
 
 /* Botones de navegación */
