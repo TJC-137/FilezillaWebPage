@@ -128,6 +128,7 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
+/* Imagen de los personajes en la lista */
 .character-item-image {
     width: 20px;              
     height: 20px;              
@@ -171,7 +172,7 @@ h1 {
 /* Mostrar la lista cuando hay resultados */
 #filtered-characters-list.show {
     display: block;
-    max-height: 108px;  /* Mostrar lista con altura */
+    max-height: 108px; 
     opacity: 1;
 }
 
@@ -186,12 +187,12 @@ h1 {
 }
 
 #filtered-characters-list::-webkit-scrollbar-thumb {
-    background: #dfdfdf; /* Color del deslizador */
+    background: #dfdfdf;
     border-radius: 5px;
 }
 
 #filtered-characters-list::-webkit-scrollbar-thumb:hover {
-    background: #f8e3a8; /* Color al pasar el ratón por el deslizador */
+    background: #f8e3a8; 
     cursor: pointer;
 }
 

@@ -18,7 +18,7 @@ async function fetchCharacters() {
         const nextButton = document.getElementById("next");
         const prevButton = document.getElementById("prev");
 
-        // Función para actualizar la visualización de un personaje
+        // Función para actualizar la visualización de un personaje en el carousel
         function updateCharacter(filteredCharacters) {
             const character = filteredCharacters[currentIndex];
 
@@ -41,10 +41,11 @@ async function fetchCharacters() {
                 characterBirthday.textContent = character.birthday;
                 characterQuote.textContent = character.quote;
 
+                // Cambiar la clase CSS segun el atributo
                 characterAttribute.className = '';
                 characterAttribute.classList.add(character.attribute);
 
-                // Mostrar rareza
+                // Mostrar la rareza en estrellas segun el número indicado
                 let stars = '';
                 for (let i = 0; i < Math.floor(character.rarity); i++) stars += '★';
                 if (character.rarity % 1 !== 0) stars += '✩';
@@ -57,6 +58,7 @@ async function fetchCharacters() {
         function renderFilteredList(filteredCharacters) {
             filteredCharactersList.innerHTML = '';  // Limpiar la lista antes de renderizar
 
+            // Renderizar cada personaje en la lista
             filteredCharacters.forEach(character => {
                 const characterItem = document.createElement("div");
                 characterItem.classList.add("character-item");
@@ -86,6 +88,7 @@ async function fetchCharacters() {
                     filteredCharactersList.classList.remove("show");  // Ocultar la lista al hacer clic
                 });
 
+                // Agregar el personaje a la lista
                 filteredCharactersList.appendChild(characterItem);
             });
 
@@ -133,9 +136,7 @@ async function fetchCharacters() {
         // Inicializar con el primer personaje
         updateCharacter(characters);
 
-    } catch (error) {
-        console.error("Error fetching characters data:", error);
-    }
+    } catch (error) {console.error("Error fetching characters data:", error);}
 }
 
 fetchCharacters();
