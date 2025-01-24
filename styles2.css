@@ -1,0 +1,310 @@
+/* Estilo global */
+body {
+    background: url('https://images8.alphacoders.com/131/thumb-1920-1318047.jpg') no-repeat center center fixed;
+    backdrop-filter: blur(0.5px);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    color: #dddada;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #ebdcb4;
+    font-size: 2.8em;
+    margin: 30px 0;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1.5px;
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+    background-color: transparent;
+    background: rgba(0, 0, 0, 0);
+    text-align: center;
+}
+
+/* Contenedor de las tarjetas en el carrusel */
+.carousel-cards-container {
+    background-color: rgba(0,0,0,0);  /* Fondo transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    position: relative;  /* Asegúrate de que el contenedor tenga un lugar donde se ubiquen las tarjetas */
+    flex-wrap: nowrap;
+    position: relative;  /* Mantener la estructura para las tarjetas */
+    border: none; /* Asegúrate de que no haya bordes visibles */
+    box-shadow: none; /* Elimina cualquier sombra que pudiera aparecer */
+}
+
+/* Card del carrusel */
+.carousel-card {
+    background-color: transparent;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px; /* Fija el tamaño de cada tarjeta */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.carousel-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(230, 183, 56, 0.719);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.carousel-card img:hover {
+    transform: rotate(10deg) scale(1.1);
+    cursor: pointer;
+}
+
+/* Información dentro de la tarjeta */
+.card-info {
+    background-color: transparent;
+    background: rgba(0, 0, 0, 0);
+    padding: 20px;
+    color: #e6e6e6;
+    border-radius: 0 0 12px 12px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-card p {
+    font-size: 12px; /* Hacemos la fuente más pequeña en cada párrafo */
+    margin: 5px 0;   /* Menos espacio entre los párrafos */
+}
+
+.carousel-card h2 {
+    font-size: 16px; /* Puedes ajustar el tamaño del título también si lo deseas */
+    margin-bottom: 8px; /* Un poco menos de espacio debajo del título */
+}
+
+/* Animación de transición para las imágenes */
+.carousel-card.fade-out {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.carousel-card.fade-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+/* Elementos de la lista de personajes */
+.character-item {
+    padding: 5px;
+    cursor: pointer;
+    color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d1d1d1;
+    transition: background-color 0.3s ease;
+}
+
+/* Imagen de los personajes en la lista */
+.character-item-image {
+    width: 20px;              
+    height: 20px;              
+    object-fit: cover; 
+    vertical-align: middle;     
+    margin-right: 10px;      
+    border-radius: 50%;  
+    border: 1px solid #cfcfce;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  
+}
+
+.character-item span {
+    font-size: 16px;          
+    font-weight: bold;  
+    display: inline-block;  
+    vertical-align: middle;  
+}
+
+.character-item:hover {
+    color: #dfbf69;
+    background-color: rgba(39, 39, 39, 0.5);
+}
+
+/* Botones de navegación */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 2.5em;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: rgba(209, 192, 93, 0);
+    font-size: 3em;
+    color: #dfbf69;
+}
+
+#prev {
+    left: 15px;
+}
+
+#next {
+    right: 15px;
+}
+
+/* Contenedor de la barra de búsqueda */
+#search-container {
+    width: 220px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 999;  /* Asegúrate de que esté encima de otros elementos */
+}
+
+/* Estilo de la barra de búsqueda */
+#search-input {
+    background-color: rgba(51, 51, 51, 0.5);
+    width: 200px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: white;
+}
+
+/* Lista de personajes filtrados */
+#filtered-characters-list {
+    max-height: 100px;
+    overflow-y: auto;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.5);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;  /* Inicialmente la lista está oculta */
+    z-index: 999;  /* Asegura que esté por encima de otros elementos */
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Mostrar la lista cuando hay resultados */
+#filtered-characters-list.show {
+    display: block;
+    max-height: 108px; 
+    opacity: 1;
+}
+
+/* Personalización de la barra de scroll */
+#filtered-characters-list::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra */
+}
+
+#filtered-characters-list::-webkit-scrollbar-track {
+    background: rgba(200, 200, 200, 0.3); /* Fondo de la pista */
+    border-radius: 5px;
+}
+
+#filtered-characters-list::-webkit-scrollbar-thumb {
+    background: #dfdfdf;
+    border-radius: 5px;
+}
+
+#filtered-characters-list::-webkit-scrollbar-thumb:hover {
+    background: #f8e3a8; 
+    cursor: pointer;
+}
+
+
+
+
+
+/* Iconos para atributos */
+#character-attribute {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+#character-attribute::after {
+    content: "";
+    position: relative;
+    left: 10px;
+    top:-1px;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Iconos para cada tipo de atributo */
+#character-attribute.Aero::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/6/67/Aero_Icon.png/revision/latest?cb=20240702104134');}
+#character-attribute.Electro::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/c/c1/Electro_Icon.png/revision/latest?cb=20240702104214');}
+#character-attribute.Glacio::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/a/aa/Glacio_Icon.png/revision/latest?cb=20240702104101');}
+#character-attribute.Fusion::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/f/f9/Fusion_Icon.png/revision/latest?cb=20240702103638');}
+#character-attribute.Havoc::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/6/64/Havoc_Icon.png/revision/latest?cb=20240702104302');}
+#character-attribute.Spectro::after {background-image: url('https://static.wikia.nocookie.net/wutheringwaves/images/9/9d/Attribute_Spectro_Round.png/revision/latest?cb=20240612101219');}
+
+/* Colores para cada tipo de atributo */
+#character-attribute.Aero{color: #57d1ad;}
+#character-attribute.Electro{color: #a733b1;}
+#character-attribute.Glacio{color: #38abcc;}
+#character-attribute.Fusion{color: #c92b49;}
+#character-attribute.Havoc{color: #81194c;}
+#character-attribute.Spectro{color: #ece3a5;}
+
+/* Color para estrellas de rareza */
+#character-rarity:hover {color: #dfbf69;}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+    h1 {font-size: 1.8em;}
+    .carousel-card img {width: 100px;height: 100px;}
+    .card-info h2 {font-size: 1.2em;}
+    .card-info p {font-size: 1em;}
+    button {font-size: 2em;}
+}
