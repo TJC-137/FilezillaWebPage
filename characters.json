@@ -6,10 +6,10 @@
         "attribute": "Aero",
         "weapon": "Pistols",
         "rarity": 4,
-        "class": "Congenital",
         "birthplace": "New Federation",
-        "birthday": "June 11",
-        "image": "https://api.resonance.rest/characters/aalto/icon"
+        "image": "https://api.resonance.rest/characters/aalto/icon",
+        "signature-weapon": "Romance in Farewell",
+        "self-weapon":"https://static.wikia.nocookie.net/wutheringwaves/images/7/75/Weapon_Romance_in_Farewell.png/revision/latest?cb=20250105164832"
       },
       {
         "name": "Baizhi",
@@ -17,10 +17,21 @@
         "attribute": "Glacio",
         "weapon": "Rectifier",
         "rarity": 4,
-        "class": "Mutant",
         "birthplace": "Huanglong",
-        "birthday": "September 10",
-        "image": "https://api.resonance.rest/characters/baizhi/icon"
+        "image": "https://api.resonance.rest/characters/baizhi/icon",
+        "signature-weapon": "Cosmic Ripples",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/3/38/Weapon_Cosmic_Ripples.png/revision/latest?cb=20240515174847"
+      },
+      {
+        "name": "Brant",
+        "quote": "Only those who have tasted both light and darkness know the value of the other.",
+        "attribute": "Fusion",
+        "weapon": "Sword",
+        "rarity": 4,
+        "birthplace": "Huanglong",
+        "image": "https://wutheringlab.com/wp-content/uploads/Brant.webp",
+        "signature-weapon": "Fables of Wisdom",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/5/5c/Weapon_Fables_of_Wisdom.png/revision/latest?cb=20250105164726"
       },
       {
         "name": "Calcharo",
@@ -28,21 +39,32 @@
         "attribute": "Electro",
         "weapon": "Broadblade",
         "rarity": 5,
-        "class": "Natural",
         "birthplace": "New Federation",
-        "birthday": "July 8",
-        "image": "https://api.resonance.rest/characters/calcharo/icon"
-      },
+        "image": "https://api.resonance.rest/characters/calcharo/icon",
+        "signature-weapon": "Autumn Trace",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/8/8a/Weapon_Autumntrace.png/revision/latest?cb=20240526015559"
+      },    
+      {
+        "name": "Camellya",
+        "quote": "How do you like this flower?",
+        "attribute": "Havoc",
+        "weapon": "Sword",
+        "rarity": 5,
+        "birthplace": "Black Shores",
+        "image": "https://i2.wp.com/genshinbuilds.aipurrjects.com/wuthering/characters/thumb_camellya.webp?strip=all&quality=100&w=256",
+        "signature-weapon": "Red Spring",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/7/7e/Weapon_Red_Spring.png/revision/latest?cb=20241114152119"
+      },      
       {
         "name": "Carlotta",
         "quote": "The beauty of art shouldn't be confined by a viewer's knowledge or taste.",
         "attribute": "Glacio",
-        "weapon": "Pistolas",
+        "weapon": "Pistols",
         "rarity": 5,
-        "class": "Natural",
         "birthplace": "Rinascita",
-        "birthday": "14 de marzo",
-        "image": "https://static.wikia.nocookie.net/wutheringwaves/images/0/06/Carlotta_Icon.png/revision/latest?cb=20250102025428"
+        "image": "https://static.wikia.nocookie.net/wutheringwaves/images/0/06/Carlotta_Icon.png/revision/latest?cb=20250102025428",
+        "signature-weapon": "The Last Dance",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/e/e0/Weapon_The_Last_Dance.png/revision/latest?cb=20250102024959"
       },
       {
         "name": "Changli",
@@ -50,10 +72,10 @@
         "attribute": "Fusion",
         "weapon": "Sword",
         "rarity": 5,
-        "class": "Natural",
         "birthplace": "Huanglong",
-        "birthday": "June 6",
-        "image": "https://api.resonance.rest/characters/changli/icon"
+        "image": "https://api.resonance.rest/characters/changli/icon",
+        "signature-weapon": "Blazing Brilliance",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/1/17/Weapon_Blazing_Brilliance.png/revision/latest?cb=20240721155939"
       },
       {
         "name": "Chixia",
@@ -61,9 +83,10 @@
         "attribute": "Fusion",
         "weapon": "Pistols",
         "rarity": 4,
-        "class": "Mutant",
-        "birthday": "April 18",
-        "image": "https://api.resonance.rest/characters/chixia/icon"
+        "birthplace": "Huanglong",
+        "image": "https://api.resonance.rest/characters/chixia/icon",
+        "signature-weapon": "Static Mist",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d2/Weapon_Static_Mist.png/revision/latest?cb=20240515175305"
       },
       {
         "name": "Danjin",
@@ -71,10 +94,10 @@
         "attribute": "Havoc",
         "weapon": "Sword",
         "rarity": 4,
-        "class": "Mutant",
         "birthplace": "Huanglong",
-        "birthday": "August 31",
-        "image": "https://api.resonance.rest/characters/danjin/icon"
+        "image": "https://api.resonance.rest/characters/danjin/icon",
+        "signature-weapon": "Emerald Genesis",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d8/Weapon_Emerald_of_Genesis.png/revision/latest?cb=20240514220335"
       },
       {
         "name": "Encore",
@@ -82,10 +105,10 @@
         "attribute": "Fusion",
         "weapon": "Rectifier",
         "rarity": 5,
-        "class": "Congenital",
         "birthplace": "New Federation",
-        "birthday": "March 21",
-        "image": "https://api.resonance.rest/characters/encore/icon"
+        "image": "https://api.resonance.rest/characters/encore/icon",
+        "signature-weapon": "Augment",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/6/63/Weapon_Augment.png/revision/latest?cb=20240526015558"
       },
       {
         "name": "Jianxin",
@@ -93,10 +116,10 @@
         "attribute": "Aero",
         "weapon": "Gauntlet",
         "rarity": 5,
-        "class": "Natural",
         "birthplace": "Huanglong",
-        "birthday": "April 6",
-        "image": "https://api.resonance.rest/characters/jianxin/icon"
+        "image": "https://api.resonance.rest/characters/jianxin/icon",
+        "signature-weapon": "Abyss Surges",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/b/be/Weapon_Abyss_Surges.png/revision/latest?cb=20240606152429"
       },
       {
         "name": "Jinhsi",
@@ -104,10 +127,10 @@
         "attribute": "Spectro",
         "weapon": "Broadblade",
         "rarity": 5,
-        "class": "Congenital",
         "birthplace": "Huanglong",
-        "birthday": "March 6",
-        "image": "https://api.resonance.rest/characters/jinhsi/icon"
+        "image": "https://api.resonance.rest/characters/jinhsi/icon",
+        "signature-weapon": "Ages of Harvest",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/b/b2/Weapon_Ages_of_Harvest.png/revision/latest?cb=20240628092550"
       },
       {
         "name": "Jiyan",
@@ -115,10 +138,10 @@
         "attribute": "Aero",
         "weapon": "Broadblade",
         "rarity": 5,
-        "class": "Mutant",
         "birthplace": "Huanglong",
-        "birthday": "December 14",
-        "image": "https://api.resonance.rest/characters/jiyan/icon"
+        "image": "https://api.resonance.rest/characters/jiyan/icon",
+        "signature-weapon": "Verdant Summit",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/e/e9/Weapon_Verdant_Summit.png/revision/latest?cb=20240515175352"
       },
       {
         "name": "Lingyang",
@@ -126,10 +149,10 @@
         "attribute": "Glacio",
         "weapon": "Gauntlet",
         "rarity": 5,
-        "class": "Natural",
         "birthplace": "Huanglong",
-        "birthday": "August 8",
-        "image": "https://api.resonance.rest/characters/lingyang/icon"
+        "image": "https://api.resonance.rest/characters/lingyang/icon",
+        "signature-weapon": "Legend of Drunken Hero",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/9/93/Weapon_Legend_of_Drunken_Hero.png/revision/latest?cb=20250105161712"
       },
       {
         "name": "Mortefi",
@@ -137,10 +160,32 @@
         "attribute": "Fusion",
         "weapon": "Pistols",
         "rarity": 4,
-        "class": "Mutant",
         "birthplace": "New Federation",
-        "birthday": "November 6",
-        "image": "https://api.resonance.rest/characters/mortefi/icon"
+        "image": "https://api.resonance.rest/characters/mortefi/icon",
+        "signature-weapon": "Cadenza",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1c/Weapon_Cadenza.png/revision/latest?cb=20240526012627"
+      },
+      {
+        "name": "Phoebe",
+        "quote": "Everything has its limits, even beauty.",
+        "attribute": "Glacio",
+        "weapon": "Rectifier",
+        "rarity": 5,
+        "birthplace": "Huanglong",
+        "image": "https://wutheringlab.com/wp-content/uploads/Phoebe.webp",
+        "signature-weapon": "Fusion Accretion",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/9/90/Weapon_Fusion_Accretion.png/revision/latest?cb=20241006135455"
+      },
+      {
+        "name": "Roccia",
+        "quote": "The wind will carry you to places you've never dreamed of, if you're brave enough to let it.",
+        "attribute": "Electro",
+        "weapon": "Rectifier",
+        "rarity": 5,
+        "birthplace": "Huanglong",
+        "image": "https://wutheringlab.com/wp-content/uploads/Roccia_icon.webp",
+        "signature-weapon": "Tragic Comedy",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/5/54/Weapon_Tragicomedy.png/revision/latest?cb=20250105161535"
       },
       {
         "name": "Rover",
@@ -148,10 +193,10 @@
          "attribute": "Spectro",
         "weapon": "Sword",
         "rarity": 5,
-        "class": "Natural",
-        "birthplace": "Skyworld",
-        "birthday": "Unknown",
-        "image": "https://api.resonance.rest/characters/rover/icon"
+        "birthplace": "Unknown",
+        "image": "https://api.resonance.rest/characters/rover/icon",
+        "signature-weapon": "Endless Collapse",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/e/eb/Weapon_Endless_Collapse.png/revision/latest?cb=20240929042406"
       },
       {
         "name": "Sanhua",
@@ -159,10 +204,10 @@
         "attribute": "Glacio",
         "weapon": "Sword",
         "rarity": 4,
-        "class": "Mutant",
         "birthplace": "Huanglong",
-        "birthday": "January 20",
-        "image": "https://api.resonance.rest/characters/sanhua/icon"
+        "image": "https://api.resonance.rest/characters/sanhua/icon",
+        "signature-weapon": "Lumingloss",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2d/Weapon_Lumingloss.png/revision/latest?cb=20240526015614"
       },
       {
         "name": "Shorekeeper",
@@ -170,10 +215,10 @@
         "attribute": "Spectro",
         "weapon": "Rectifier",
         "rarity": 5,
-        "class": "Unknown",
         "birthplace": "Black Shores",
-        "birthday": "February 27",
-        "image": "https://api.resonance.rest/characters/shorekeeper/icon"
+        "image": "https://api.resonance.rest/characters/shorekeeper/icon",
+        "signature-weapon": "Stellar Symphony",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/5/5e/Weapon_Stellar_Symphony.png/revision/latest?cb=20240929041851"
       },
       {
         "name": "Taoqi",
@@ -181,10 +226,10 @@
         "attribute": "Havoc",
         "weapon": "Broadblade",
         "rarity": 4,
-        "class": "Natural",
         "birthplace": "Huanglong",
-        "birthday": "February 25",
-        "image": "https://api.resonance.rest/characters/taoqi/icon"
+        "image": "https://api.resonance.rest/characters/taoqi/icon",
+        "signature-weapon": "Lustrous Razor",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/c/c1/Weapon_Lustrous_Razor.png/revision/latest?cb=20240606152146"
       },
       {
         "name": "Verina",
@@ -192,9 +237,10 @@
         "attribute": "Spectro",
         "weapon": "Rectifier",
         "rarity": 5,
-        "class": "Congenital",
         "birthplace": "New Federation",
-        "image": "https://api.resonance.rest/characters/verina/icon"
+        "image": "https://api.resonance.rest/characters/verina/icon",
+        "signature-weapon": "Waltz in Masquerade",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/4/4e/Weapon_Waltz_in_Masquerade.png/revision/latest?cb=20250105164921"
       },
       {
         "name": "Xiangli Yao",
@@ -202,10 +248,10 @@
         "attribute": "Electro",
         "weapon": "Gauntlet",
         "rarity": 5,
-        "class": "Mutant",
         "birthplace": "Huanglong",
-        "birthday": "Unknown",
-        "image": "https://api.resonance.rest/characters/xiangli%20Yao/icon"
+        "image": "https://api.resonance.rest/characters/xiangli%20Yao/icon",
+        "signature-weapon": "Verity's Handle",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/1/11/Weapon_Verity%27s_Handle.png/revision/latest?cb=20240808123427"
       },
       {
         "name": "Yangyang",
@@ -213,10 +259,10 @@
         "attribute": "Aero",
         "weapon": "Sword",
         "rarity": 4,
-        "class": "Natural",
         "birthplace": "Huanglong",
-        "birthday": "October 11",
-        "image": "https://api.resonance.rest/characters/yangyang/icon"
+        "image": "https://api.resonance.rest/characters/yangyang/icon",
+        "signature-weapon": "Commando of Conviction",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/2/2f/Weapon_Commando_of_Conviction.png/revision/latest?cb=20240526012457"
       },
       {
         "name": "Yinlin",
@@ -224,21 +270,21 @@
         "attribute": "Electro",
         "weapon": "Rectifier",
         "rarity": 5,
-        "class": "Congenital",
         "birthplace": "Huanglong",
-        "birthday": "September 17",
-        "image": "https://api.resonance.rest/characters/yinlin/icon"
+        "image": "https://api.resonance.rest/characters/yinlin/icon",
+        "signature-weapon": "Stringmaster",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/1/16/Weapon_Stringmaster.png/revision/latest?cb=20240526010204"
       },
       {
         "name": "Youhu",
         "quote": "Here you go, a special edition of my poetry collection, hand-signed by moi! You are welcome!",
         "attribute": "Glacio",
-        "weapon": "Gauntlets",
+        "weapon": "Rectifier",
         "rarity": 4,
-        "class": "Unknown",
         "birthplace": "Huanglong",
-        "birthday": "October 13",
-        "image": "https://api.resonance.rest/characters/youhu/icon"
+        "image": "https://api.resonance.rest/characters/youhu/icon",
+        "signature-weapon": "Call of the Abyss",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/f/f9/Weapon_Call_of_the_Abyss.png/revision/latest?cb=20250105161833"
       },
       {
         "name": "Yuanwu",
@@ -246,21 +292,21 @@
         "attribute": "Electro",
         "weapon": "Gauntlet",
         "rarity": 4,
-        "class": "Natural",
         "birthplace": "Huanglong",
-        "birthday": "October 2",
-        "image": "https://api.resonance.rest/characters/yuanwu/icon"
+        "image": "https://api.resonance.rest/characters/yuanwu/icon",
+        "signature-weapon": "Celestial Spiral",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/5/59/Weapon_Celestial_Spiral.png/revision/latest?cb=20241006135332"
       },
       {
         "name": "Zhezhi",
         "quote": "What I wanted to say is, the sunlight on you right now is so beautiful. Can I... paint you?",
         "attribute": "Glacio",
-        "weapon": "Congenital",
+        "weapon": "Rectifier",
         "rarity": 5,
-        "class": "Natural",
         "birthplace": "Huanglong",
-        "birthday": "December 31",
-        "image": "https://api.resonance.rest/characters/zhezhi/icon"
+        "image": "https://api.resonance.rest/characters/zhezhi/icon",
+        "signature-weapon": "Rime-Draped Sprouts",
+        "self-weapon": "https://static.wikia.nocookie.net/wutheringwaves/images/5/59/Weapon_Rime-Draped_Sprouts.png/revision/latest?cb=20240906194139"
       }
     ]
   }

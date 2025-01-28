@@ -310,6 +310,62 @@ button:hover {
 /* Color para estrellas de rareza */
 #character-rarity-stars:hover {color: #dfbf69;}
 
+#character-weapon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Ajustar el tamaño de los iconos */
+#character-weapon::after {
+    content: "";
+    position: relative;
+    top:-1px;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Iconos para cada tipo de arma */
+#character-weapon.Pistols::after {background-image: url('https://wutheringlab.com/wp-content/uploads/Pistol.webp'); }
+#character-weapon.Rectifier::after {background-image: url('https://wutheringlab.com/wp-content/uploads/Rectifier.webp'); }
+#character-weapon.Broadblade::after {background-image: url('https://wutheringlab.com/wp-content/uploads/Broadblade.webp'); }
+#character-weapon.Sword::after {background-image: url('https://wutheringlab.com/wp-content/uploads/Sword.webp'); }
+#character-weapon.Gauntlet::after {background-image: url('https://wutheringlab.com/wp-content/uploads/Gauntlet.webp');}
+
+
+.signature-weapon-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Ajustar el tamaño de la imagen */
+.signature-weapon-container::after {
+    content: "";
+    position: relative;
+    top: -1px;
+    width: 50px;  /* Ajusta el tamaño de la imagen */
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Ajustar el tamaño de la imagen */
+.signature-weapon-image {
+    width: 30px;  /* Tamaño ajustado para la imagen */
+    height: 30px;  /* Tamaño ajustado para la imagen */
+    object-fit: contain;  /* Mantener la proporción de la imagen */
+    margin-left: 10px;  /* Espacio entre el texto y la imagen */
+    max-width: 50px;  /* Limitar el tamaño máximo para evitar que se estire más */
+    max-height: 50px;  /* Limitar el tamaño máximo para evitar que se estire más */
+    border: 3px solid rgba(86, 185, 124, 0.719);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+
 /* Responsiveness */
 @media (max-width: 768px) {
     h1 {font-size: 1.8em;}
@@ -321,4 +377,3 @@ button:hover {
     .card-info p {font-size: 1em;}
     button {font-size: 2em; padding: 10px;}
 }
-

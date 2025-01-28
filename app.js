@@ -50,7 +50,9 @@ async function fetchCharacters() {
                     attribute.innerHTML = `<strong>Attribute:</strong>&nbsp;<span class="attribute-response">${character.attribute}</span>`;
                     const attributeClass = character.attribute;
                     attribute.classList.add(attributeClass); // Añadimos la clase dinámica del atributo
-                } else {
+                } 
+
+                else {
                     attribute.innerHTML = `<strong>Attribute:</strong> <span class="default-attribute">Not Available</span>`;  // También espacio aquí
                 }
 
@@ -74,24 +76,51 @@ async function fetchCharacters() {
                 rarityStars.innerHTML = stars;  // Añadir las estrellas a la rareza
                 rarity.appendChild(rarityStars);  // Añadir las estrellas al p de rareza
                 card.appendChild(rarity);
-            
-                // Otros detalles
-                const weapon = document.createElement("p");
-                weapon.innerHTML = `<strong>Weapon:</strong> ${character.weapon}`;
-                card.appendChild(weapon);
-            
-                const charClass = document.createElement("p");
-                charClass.innerHTML = `<strong>Class:</strong> ${character.class}`;
-                card.appendChild(charClass);
-            
+
+                // Birthplace            
                 const birthplace = document.createElement("p");
                 birthplace.innerHTML = `<strong>Birthplace:</strong> ${character.birthplace}`;
                 card.appendChild(birthplace);
+        
+
+                // Weapon
+                const weapon = document.createElement("p");
+                weapon.innerHTML = `<strong>Weapon:</strong> &nbsp; ${character.weapon}`;
+
+                // Asignamos la clase correcta para el arma
+                if (character.weapon) {
+                    weapon.id = "character-weapon"; // Asignamos el ID correcto para el arma
+                    weapon.classList.add(character.weapon); // Añadimos la clase del arma, como 'Pistols', 'Rectifier', etc.
+                } 
+                
+                else {
+                    weapon.classList.add("default-weapon");  // En caso de que no haya arma, usamos una clase predeterminada
+                }
+
+                card.appendChild(weapon);
             
-                const birthday = document.createElement("p");
-                birthday.innerHTML = `<strong>Birthday:</strong> ${character.birthday}`;
-                card.appendChild(birthday);
+
+
+                // Signature Weapon
+                const signatureWeaponContainer = document.createElement("div");
+                signatureWeaponContainer.classList.add("signature-weapon-container");  // Clase contenedora para organizar los elementos
+
+                // Crear la descripción
+                const signatureWeaponDescription = document.createElement("p");
+                signatureWeaponDescription.innerHTML = `<strong>Signature Weapon:</strong> &nbsp; ${character["signature-weapon"]}`;
+                signatureWeaponContainer.appendChild(signatureWeaponDescription);
             
+                // Crear la imagen del arma (si existe la URL)
+                if (character["self-weapon"]) {
+                    const signatureWeaponImage = document.createElement("img");
+                    signatureWeaponImage.src = character["self-weapon"];  // Asignamos la URL de la imagen
+                    signatureWeaponImage.alt = "Signature Weapon Image";  // Texto alternativo para la accesibilidad
+                    signatureWeaponImage.classList.add("signature-weapon-image");  // Clase para aplicar estilos a la imagen
+                    signatureWeaponContainer.appendChild(signatureWeaponImage);
+                }
+
+                card.appendChild(signatureWeaponContainer);
+
                 // Crear cita y agregarla al final
                 const quote = document.createElement("p");
                 quote.textContent = `"${character.quote}"`;
