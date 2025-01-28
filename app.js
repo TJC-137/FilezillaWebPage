@@ -4,54 +4,131 @@ async function fetchCharacters() {
         const characters = await response.json();
 
         let currentIndex = 0;
-        const characterImage = document.getElementById("character-image");
-        const characterName = document.getElementById("character-name");
-        const characterAttribute = document.getElementById("character-attribute");
-        const characterWeapon = document.getElementById("character-weapon");
-        const characterRarity = document.getElementById("character-rarity");
-        const characterClass = document.getElementById("character-class");
-        const characterBirthplace = document.getElementById("character-birthplace");
-        const characterBirthday = document.getElementById("character-birthday");
-        const characterQuote = document.getElementById("character-quote");
-        const filteredCharactersList = document.getElementById("filtered-characters-list");
-        const searchInput = document.getElementById("search-input");
+        const carouselCardsContainer = document.querySelector(".carousel-cards-container");
         const nextButton = document.getElementById("next");
         const prevButton = document.getElementById("prev");
+        const searchInput = document.getElementById("search-input");
+        const filteredCharactersList = document.getElementById("filtered-characters-list");
 
-        // Función para actualizar la visualización de un personaje en el carousel
-        function updateCharacter(filteredCharacters) {
-            const character = filteredCharacters[currentIndex];
+        // Función para actualizar la vista del carrusel
+        function updateCarousel() {
+            carouselCardsContainer.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevas tarjetas
 
-            if (!character) {
-                characterName.textContent = "No characters found!";
-                characterImage.src = "";
-                return;
-            }
+            // Calcular los índices para las tarjetas
+            const prevIndex = (currentIndex - 1 + characters.length) % characters.length;
+            const nextIndex = (currentIndex + 1) % characters.length;
 
-            const newImage = new Image();
-            newImage.src = character.image;
+            const characterPrev = characters[prevIndex];
+            const characterCurrent = characters[currentIndex];
+            const characterNext = characters[nextIndex];
 
-            newImage.onload = () => {
-                characterImage.src = newImage.src;
-                characterName.textContent = character.name;
-                characterAttribute.textContent = character.attribute;
-                characterWeapon.textContent = character.weapon;
-                characterClass.textContent = character.class;
-                characterBirthplace.textContent = character.birthplace;
-                characterBirthday.textContent = character.birthday;
-                characterQuote.textContent = character.quote;
+            // Crear tarjetas y agregarlas al contenedor
+            const createCard = (character) => {
+                const card = document.createElement("div");
+                card.classList.add("carousel-card");
+            
+                // Crear imagen
+                const img = document.createElement("img");
+                img.src = character.image;
+                card.appendChild(img);
+            
+                // Crear nombre
+                const name = document.createElement("h2");
+                name.textContent = character.name;
+                card.appendChild(name);
+            
+                // Crear el contenedor del atributo
+                const attributeContainer = document.createElement("div");
+                attributeContainer.classList.add("attribute-container");
 
-                // Cambiar la clase CSS segun el atributo
-                characterAttribute.className = '';
-                characterAttribute.classList.add(character.attribute);
+                // Crear el elemento del atributo con título en negrita
+                const attribute = document.createElement("p");
+                attribute.id = "character-attribute"; // Asignamos el ID correcto para el atributo
 
-                // Mostrar la rareza en estrellas segun el número indicado
+                // Asegurarnos de que solo el valor cambie de color
+                if (character.attribute) {
+                    attribute.innerHTML = `<strong>Attribute:</strong>&nbsp;<span class="attribute-response">${character.attribute}</span>`;
+                    const attributeClass = character.attribute;
+                    attribute.classList.add(attributeClass); // Añadimos la clase dinámica del atributo
+                } else {
+                    attribute.innerHTML = `<strong>Attribute:</strong> <span class="default-attribute">Not Available</span>`;  // También espacio aquí
+                }
+
+                attributeContainer.appendChild(attribute);
+                card.appendChild(attributeContainer);
+
+                // Mostrar la rareza en estrellas según el número indicado
+                const rarity = document.createElement("p");
+                rarity.innerHTML = `<strong>Rarity:</strong> `;
+            
+                // Crear un contenedor para las estrellas de rareza (para aplicar el hover solo a las estrellas)
+                const rarityStars = document.createElement("span");
+                rarityStars.id = "character-rarity-stars";  // Contenedor para las estrellas
+            
+                // Crear las estrellas de rareza
                 let stars = '';
-                for (let i = 0; i < Math.floor(character.rarity); i++) stars += '★';
-                if (character.rarity % 1 !== 0) stars += '✩';
-                for (let i = Math.ceil(character.rarity); i < 5; i++) stars += '☆';
-                characterRarity.innerHTML = stars;
+                for (let i = 0; i < Math.floor(character.rarity); i++) stars += '★';  // Estrellas llenas
+                if (character.rarity % 1 !== 0) stars += '✩';  // Estrella parcial si es decimal
+                for (let i = Math.ceil(character.rarity); i < 5; i++) stars += '☆';  // Estrellas vacías para completar 5
+            
+                rarityStars.innerHTML = stars;  // Añadir las estrellas a la rareza
+                rarity.appendChild(rarityStars);  // Añadir las estrellas al p de rareza
+                card.appendChild(rarity);
+            
+                // Otros detalles
+                const weapon = document.createElement("p");
+                weapon.innerHTML = `<strong>Weapon:</strong> ${character.weapon}`;
+                card.appendChild(weapon);
+            
+                const charClass = document.createElement("p");
+                charClass.innerHTML = `<strong>Class:</strong> ${character.class}`;
+                card.appendChild(charClass);
+            
+                const birthplace = document.createElement("p");
+                birthplace.innerHTML = `<strong>Birthplace:</strong> ${character.birthplace}`;
+                card.appendChild(birthplace);
+            
+                const birthday = document.createElement("p");
+                birthday.innerHTML = `<strong>Birthday:</strong> ${character.birthday}`;
+                card.appendChild(birthday);
+            
+                // Crear cita y agregarla al final
+                const quote = document.createElement("p");
+                quote.textContent = `"${character.quote}"`;
+                card.appendChild(quote);
+            
+                return card;
             };
+
+            const prevCard = createCard(characterPrev);
+            const currentCard = createCard(characterCurrent);
+            const nextCard = createCard(characterNext);
+
+            // Agregar las tarjetas al contenedor
+            carouselCardsContainer.appendChild(prevCard);
+            carouselCardsContainer.appendChild(currentCard);
+            carouselCardsContainer.appendChild(nextCard);
+        }
+
+        // Función para ir al siguiente personaje
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % characters.length; // ciclo al principio cuando llega al final
+            updateCarousel();
+        });
+
+        // Función para ir al personaje anterior
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + characters.length) % characters.length; // ciclo al final cuando va al principio
+            updateCarousel();
+        });
+
+        // Filtrar personajes al escribir en el campo de búsqueda
+        function filterCharacters() {
+            const searchInputValue = searchInput.value.toLowerCase();
+            const filteredCharacters = characters.filter(character =>
+                character.name.toLowerCase().includes(searchInputValue)
+            );
+            renderFilteredList(filteredCharacters);
         }
 
         // Renderizar la lista de personajes filtrados
@@ -84,7 +161,7 @@ async function fetchCharacters() {
                 // Seleccionar un personaje al hacer clic
                 characterItem.addEventListener("click", () => {
                     currentIndex = characters.findIndex(c => c.name === character.name);
-                    updateCharacter(filteredCharacters);
+                    updateCarousel();
                     filteredCharactersList.classList.remove("show");  // Ocultar la lista al hacer clic
                 });
 
@@ -94,16 +171,6 @@ async function fetchCharacters() {
 
             // Mostrar/Ocultar la lista
             filteredCharactersList.classList.toggle("show", filteredCharacters.length > 0);
-        }
-
-
-        // Filtrar personajes al escribir en el campo de búsqueda
-        function filterCharacters() {
-            const searchInputValue = searchInput.value.toLowerCase();
-            const filteredCharacters = characters.filter(character =>
-                character.name.toLowerCase().includes(searchInputValue)
-            );
-            renderFilteredList(filteredCharacters);
         }
 
         // Eventos de búsqueda
@@ -122,21 +189,13 @@ async function fetchCharacters() {
             }
         });
 
-        // Navegación de personajes con botones
-        nextButton.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % characters.length;
-            updateCharacter(characters);
-        });
+        // Inicializamos el carrusel con el primer personaje
+        updateCarousel();
 
-        prevButton.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + characters.length) % characters.length;
-            updateCharacter(characters);
-        });
-
-        // Inicializar con el primer personaje
-        updateCharacter(characters);
-
-    } catch (error) {console.error("Error fetching characters data:", error);}
+    } catch (error) {
+        console.error('Error fetching characters:', error);
+    }
 }
 
+// Llamada a la función fetchCharacters al cargar la página
 fetchCharacters();
