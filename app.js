@@ -24,26 +24,46 @@ async function fetchCharacters() {
 
             // Crear tarjetas y agregarlas al contenedor
             const createCard = (character) => {
+
+                const getBorderColor = (attribute) => {
+                    // Definir los colores para cada atributo
+                    const colors = {
+                        Aero: '#57d1ad',
+                        Electro: '#a733b1',
+                        Glacio: '#38abcc',
+                        Fusion: '#c92b49',
+                        Havoc: '#81194c',
+                        Spectro: '#ece3a5',
+                    };
+                    return colors[attribute] || '#e6b738';  // Color por defecto si no se encuentra el atributo
+                };
+
+                // Crear la tarjeta
                 const card = document.createElement("div");
                 card.classList.add("carousel-card");
+
+                // Obtener el color del borde de las imagenes basado en el atributo
+                const borderColor = getBorderColor(character.attribute);
             
-                // Crear imagen
+                // Imagen del personaje
                 const img = document.createElement("img");
                 img.src = character.image;
+                img.classList.add("character-img");
+                img.style.borderColor = borderColor;
                 card.appendChild(img);
-            
+         
                 // Crear nombre
                 const name = document.createElement("h2");
                 name.textContent = character.name;
                 card.appendChild(name);
             
-                // Crear el contenedor del atributo
+                // Contenedor del atributo
                 const attributeContainer = document.createElement("div");
                 attributeContainer.classList.add("attribute-container");
 
                 // Crear el elemento del atributo con título en negrita
                 const attribute = document.createElement("p");
-                attribute.id = "character-attribute"; // Asignamos el ID correcto para el atributo
+                attribute.id = "character-attribute";
 
                 // Asegurarnos de que solo el valor cambie de color
                 if (character.attribute) {
@@ -73,6 +93,7 @@ async function fetchCharacters() {
                 if (character.rarity % 1 !== 0) stars += '✩';  // Estrella parcial si es decimal
                 for (let i = Math.ceil(character.rarity); i < 5; i++) stars += '☆';  // Estrellas vacías para completar 5
             
+                // Añadir las estrellas al contenedor
                 rarityStars.innerHTML = stars;  // Añadir las estrellas a la rareza
                 rarity.appendChild(rarityStars);  // Añadir las estrellas al p de rareza
                 card.appendChild(rarity);
@@ -99,8 +120,6 @@ async function fetchCharacters() {
 
                 card.appendChild(weapon);
             
-
-
                 // Signature Weapon
                 const signatureWeaponContainer = document.createElement("div");
                 signatureWeaponContainer.classList.add("signature-weapon-container");  // Clase contenedora para organizar los elementos
@@ -116,6 +135,7 @@ async function fetchCharacters() {
                     signatureWeaponImage.src = character["self-weapon"];  // Asignamos la URL de la imagen
                     signatureWeaponImage.alt = "Signature Weapon Image";  // Texto alternativo para la accesibilidad
                     signatureWeaponImage.classList.add("signature-weapon-image");  // Clase para aplicar estilos a la imagen
+                    signatureWeaponImage.style.borderColor = borderColor;
                     signatureWeaponContainer.appendChild(signatureWeaponImage);
                 }
 
@@ -124,11 +144,15 @@ async function fetchCharacters() {
                 // Crear cita y agregarla al final
                 const quote = document.createElement("p");
                 quote.textContent = `"${character.quote}"`;
+                
+                // Poner la quote en cursiva
+                quote.style.fontStyle = "italic";
                 card.appendChild(quote);
             
                 return card;
             };
 
+            // Crear las tarjetas
             const prevCard = createCard(characterPrev);
             const currentCard = createCard(characterCurrent);
             const nextCard = createCard(characterNext);
@@ -136,7 +160,8 @@ async function fetchCharacters() {
             // Agregar las tarjetas al contenedor
             carouselCardsContainer.appendChild(prevCard);
             carouselCardsContainer.appendChild(currentCard);
-            carouselCardsContainer.appendChild(nextCard);
+            carouselCardsContainer.appendChild(nextCard);  
+       
         }
 
         // Función para ir al siguiente personaje
@@ -151,6 +176,8 @@ async function fetchCharacters() {
             updateCarousel();
         });
 
+        
+        
         // Filtrar personajes al escribir en el campo de búsqueda
         function filterCharacters() {
             const searchInputValue = searchInput.value.toLowerCase();
