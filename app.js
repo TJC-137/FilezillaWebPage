@@ -164,6 +164,7 @@ async function fetchCharacters() {
        
         }
 
+        
         // Función para ir al siguiente personaje
         nextButton.addEventListener("click", () => {
             currentIndex = (currentIndex + 1) % characters.length; // ciclo al principio cuando llega al final
@@ -176,8 +177,6 @@ async function fetchCharacters() {
             updateCarousel();
         });
 
-        
-        
         // Filtrar personajes al escribir en el campo de búsqueda
         function filterCharacters() {
             const searchInputValue = searchInput.value.toLowerCase();
