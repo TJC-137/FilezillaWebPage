@@ -3,6 +3,7 @@ async function fetchCharacters() {
         const response = await fetch("http://localhost:3000/characters");
         const characters = await response.json();
 
+        // Variables globales
         let currentIndex = 0;
         const carouselCardsContainer = document.querySelector(".carousel-cards-container");
         const nextButton = document.getElementById("next");
@@ -18,6 +19,7 @@ async function fetchCharacters() {
             const prevIndex = (currentIndex - 1 + characters.length) % characters.length;
             const nextIndex = (currentIndex + 1) % characters.length;
 
+            // Obtener los personajes previo, actual y siguiente
             const characterPrev = characters[prevIndex];
             const characterCurrent = characters[currentIndex];
             const characterNext = characters[nextIndex];
@@ -101,8 +103,7 @@ async function fetchCharacters() {
                 // Birthplace            
                 const birthplace = document.createElement("p");
                 birthplace.innerHTML = `<strong>Birthplace:</strong> ${character.birthplace}`;
-                card.appendChild(birthplace);
-        
+                card.appendChild(birthplace);   
 
                 // Weapon
                 const weapon = document.createElement("p");
@@ -164,7 +165,6 @@ async function fetchCharacters() {
        
         }
 
-        
         // Función para ir al siguiente personaje
         nextButton.addEventListener("click", () => {
             currentIndex = (currentIndex + 1) % characters.length; // ciclo al principio cuando llega al final
